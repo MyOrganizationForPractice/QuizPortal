@@ -1,0 +1,41 @@
+<div class="boostrap-wrapper">
+    <div class="container-fluid">
+        <h1 class="mT10 mL10">Available Quizzes</h1>
+        <div class="row mT20">
+          <div class="col-md-4" *ngFor="let q of quizData">
+           <mat-card class="mB20">
+             <mat-card-header>
+                <div mat-card-avatar class="example-header-image"></div>
+                <mat-card-title>
+                    {{q.title}}
+                </mat-card-title>
+                <mat-card-subtitle>
+                    {{q.category.title}}
+                </mat-card-subtitle>
+             </mat-card-header>
+             <mat-card-content>
+              <p class="truncate"> {{q.description}}</p>
+             </mat-card-content>
+             <!-- <mat-card-action>
+                <button >View</button>
+             </mat-card-action> -->
+             <div >
+             <button class="mB5 mL5 mT20" mat-raised-button color="primary">View</button>
+             <button [routerLink]="'/normal-dashboard/quiz-instruction/'+ q.qId" class="mB5 mL5 mT20" mat-raised-button color="accent">Start</button>
+             <button class="mB5 mL5 mT20" mat-button color="accent">Q:{{q.numberOfQuestion}}</button>
+             <button class="mB5 mT20" mat-button color="accent">TM:{{q.maxMarks}}</button>
+            </div>
+           </mat-card>
+          </div>
+          <div class="col-md-12" *ngIf="quizData.length==0">
+                 <mat-card>
+                    <mat-card-content>
+                        <h1>No Data Available in this Category!!</h1>
+                    </mat-card-content>
+                 </mat-card>
+          </div>
+        </div>
+
+    </div>
+</div>
+<!-- {{quizData | json}} -->

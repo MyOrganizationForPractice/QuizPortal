@@ -1,0 +1,36 @@
+
+<div class="bootstrap-wrapper">
+    <div class="container">
+      <div class="row">
+          <div class="col-md-6 offset-md-3">
+            <mat-card>
+              <div class="container text-center border-radius">
+                  <img src="../../../assets/study.png" alt="">
+              </div>
+              <h1 class="text-center">Login Here!!</h1>
+
+              <form (ngSubmit)="login()">
+                <!--username-->
+                <mat-form-field class="full-width" appearance="outline">
+                  <mat-label>UserName</mat-label>
+                  <input [(ngModel)]="loginData.username" name="username" required matInput placeholder="Enter here..">
+                </mat-form-field>
+                <!--password-->
+                <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>Password</mat-label>
+                    <input [(ngModel)]="loginData.password" name="password" type="password" required matInput placeholder="Enter here..">
+                  </mat-form-field>
+                <div class="container text-center mB10">
+                  <button type="submit" mat-raised-button color="primary">Login</button>
+                  <!-- <button style="margin-left: 15px;" mat-raised-button color="accent">Reset</button> -->
+                </div>
+                </form>
+            </mat-card>
+           <div class="text-right">
+            <!-- <a class="text-center" href="http://localhost:4200/foget-password">Forget Password?</a> -->
+            <a class="text-center" routerLink="/foget-password">Forget Password?</a>
+           </div>
+        </div>
+      </div>              
+    </div>
+</div>

@@ -1,0 +1,24 @@
+<mat-toolbar color="accent">
+    <a 
+    routerLink="/"
+    mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu_book</mat-icon>
+    </a>
+    <span>QuizPortal</span>
+    <span class="example-spacer"></span>
+    <!-- <a
+    routerLink="/login"
+    mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+       <mat-icon>login</mat-icon>
+    </a>
+    <a 
+    routerLink="/signup"
+    mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+        <mat-icon>note</mat-icon>
+    </a> -->
+    <div  class="topnav">
+        <a *ngIf="!loginService.isLoggedIn()" class="active" routerLink="/login">Login</a>
+        <a *ngIf="!loginService.isLoggedIn()" routerLink="/signup">Register</a>
+        <a *ngIf="loginService.isLoggedIn()" (click)="logout()" routerLink="/signup">Logout</a>
+      </div>
+  </mat-toolbar>
